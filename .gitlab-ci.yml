@@ -378,7 +378,7 @@ darwin:
       export COMMIT=$(git rev-parse HEAD)
       export PLATFORM=x86_64-apple-darwin
       cargo build -j 8 --features final --release #$CARGOFLAGS
-      cargo build -j 8 --features final --release -p ethstore #$CARGOFLAGS
+      cargo build -j 8 --features ethstore-cli --release -p ethstore #$CARGOFLAGS
       rm -rf parity.md5
       md5sum target/release/parity > parity.md5
       export SHA3=$(target/release/parity tools hash target/release/parity)
